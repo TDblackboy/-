@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Hexagon</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Bootstrap 3.3.7 -->
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+	<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+	<link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!-- Google Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand"><b><span class="glyphicon glyphicon-cloud"></span>&nbsp;云监管平台</b>&nbsp;&nbsp;<small>HEXAGON</small></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mission <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+               <li><a href="#">Real-time Monitoring</a></li>
+                <li class="divider"></li>
+                <li><a href="exception-view.html">Exception Query</a></li>
+                <li class="divider"></li>
+                <li><a href="monitor.html">Dredge personal</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+
+		<!-- Full Width Column -->
+		<div class="content-wrapper">
+			<div class="container">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<h1>
+						<small><a class="glyphicon glyphicon-th-large" href="#"></a>&nbsp;公共地点人流量实时监控</small>
+					</h1>
+				</section>
+
+				<!-- Main content -->
+				<section class="content">
+				
+					<!-- video show -->
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- interactive chart -->
+							<div class="box box-primary">
+								
+								<div class="box-body">
+
+									<!--视频列  -->
+									<div class="col-md-6">
+										<div class="box box-danger">
+											<div class="box-header with-border">
+												<i class="glyphicon glyphicon-grain"></i>
+												<h3 class="box-title">监控视频</h3>
+											</div>
+											<div class="box-body">
+													<!-- 注入视频 -->
+													<video id="myVideo" width="490" height="300"
+														controls="controls">
+														<source src="../video/test3_detected.mp4" type="video/mp4" />
+													</video>
+											</div>
+											<!-- /.box-body-->
+										</div>
+									</div>
+
+									<!--  -->
+									<!-- flot charts -->
+									<div class="col-md-6">
+										<div class="box box-success">
+											<div class="box-header with-border">
+												<i class="glyphicon glyphicon-scale"></i>
+												<h3 class="box-title">地点人流</h3>
+												<div class="box-tools pull-right">
+													Real time
+													<div class="btn-group" id="realtime"
+														data-toggle="btn-toggle">
+														<button type="button"
+															class="btn btn-default btn-xs active" data-toggle="on">On</button>
+														<button type="button" class="btn btn-default btn-xs"
+															data-toggle="off">Off</button>
+													</div>
+												</div>
+											</div>
+											
+											<div class="box-body">
+												<div id="line-chart-flow">
+													<div id="interactive" style="height: 300px;"></div>
+												</div>
+											</div>
+											<!-- /.box-body-->
+										</div>
+									</div>
+
+
+								</div>
+								<!-- /.box-body-->
+							</div>
+							<!-- /.box -->
+						</div>
+						<!-- /.col -->
+					</div>
+
+					<!-- 第二行 -->
+					<!-- 统计分析 -->
+					<!-- <div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="box box-primary">
+									<div class="box-header with-border">
+										<i class="glyphicon glyphicon-fire"></i>
+										<h3 class="box-title">异常数据统计分析结果</h3>
+										<div class="box-tools pull-right">
+											<button class="btn btn-box-tool" type="button"
+												data-widget="collapse">
+												<i class="fa fa-minus"></i>
+											</button>
+										</div>
+									</div>
+									<div class="box-body">
+										<dl class="dl-horizontal">
+											<dt>最频繁爆发异常的地点</dt>
+												<dd>基教一层112对面楼梯口</dd>
+										</dl>
+									</div>/box
+								</div>
+							</div>
+						</div>
+					</div> -->
+					
+					<!-- 第三行 -->
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- interactive chart -->
+							<div class="box box-primary">
+								<div class="box-header with-border">
+									<i class="glyphicon glyphicon-fire"></i>
+									<h3 class="box-title">异常数据统计分析结果</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" type="button"
+											data-widget="collapse">
+											<i class="fa fa-minus"></i>
+										</button>
+									</div>
+								</div>
+								<div class="box-body">
+
+									<!-- 图表 -->
+									<div class="row">
+										<!-- 图1  -->
+										<div class="col-md-6">
+											<div class="box box-info">
+												<div class="box-header with-border">
+													<i class="glyphicon glyphicon-grain"></i>
+
+													<h3 class="box-title">线性分析</h3>
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+														class="label label-success">105</span>&nbsp; <span
+														class="label label-warning">106</span>&nbsp; <span
+														class="label label-danger">111</span>&nbsp; <span
+														class="label label-info">112</span>
+													<div class="box-tools pull-right">
+														<button type="button" class="btn btn-box-tool"
+															data-widget="collapse">
+															<i class="fa fa-minus"></i>
+														</button>
+													</div>
+												</div>
+												<div class="box-body">
+													<div id="line-chart-result" style="height: 275px;"></div>
+												</div>
+												<!-- /.box-body-->
+											</div>
+										</div>
+
+										<!-- 图2 -->
+										<div class="col-md-6">
+											<div class="box box-warning">
+												<div class="box-header with-border">
+													<i class="glyphicon glyphicon-grain"></i>
+													<h3 class="box-title">比重分析</h3>
+
+													<div class="box-tools pull-right">
+														<button type="button" class="btn btn-box-tool"
+															data-widget="collapse">
+															<i class="fa fa-minus"></i>
+														</button>
+													</div>
+												</div>
+												<div class="box-body">
+													<canvas id="pieChart" style="height: 300px"></canvas>
+												</div>
+												<!-- /.box-body -->
+											</div>
+										</div>
+
+									</div>
+									<!-- /row -->
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.content-wrapper -->
+
+
+		<footer class="main-footer">
+			<div class="container">
+				<div class="pull-right hidden-xs">
+					<b>STD</b> 王牌飞行员
+				</div>
+				<strong>中国软件杯2019第八届大赛 - 公共地点人流量计算的云监管平台</strong>&nbsp;<a href="#"></a>
+			</div>
+			<!-- /.container -->
+		</footer>
+
+
+	</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- ChartJS -->
+<script src="../bower_components/chart/Chart.js"></script>
+<!-- FLOT CHARTS -->
+<script src="../bower_components/Flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="../bower_components/Flot/jquery.flot.resize.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="../bower_components/Flot/jquery.flot.pie.js"></script>
+
+<!-- Hexagon for flow -->
+<script src="../hexagon-js/video-init.js"></script>
+
+</body>
+</html>

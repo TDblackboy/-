@@ -1,0 +1,47 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>MonitorService</servlet-name>
+  	<display-name>MonitorService</display-name>
+  	<description></description>
+  	<servlet-class>service.MonitorService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AcceptionService</servlet-name>
+  	<display-name>AcceptionService</display-name>
+  	<description></description>
+  	<servlet-class>service.AcceptionService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Atest</servlet-name>
+  	<display-name>Atest</display-name>
+  	<description></description>
+  	<servlet-class>service.Atest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ExceptionDataService</servlet-name>
+  	<display-name>ExceptionDataService</display-name>
+  	<description></description>
+  	<servlet-class>service.ExceptionDataService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MonitorService</servlet-name>
+  	<url-pattern>/MonitorService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AcceptionService</servlet-name>
+  	<url-pattern>/AcceptionService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Atest</servlet-name>
+  	<url-pattern>/Atest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ExceptionDataService</servlet-name>
+  	<url-pattern>/ExceptionDataService</url-pattern>
+  </servlet-mapping>
+</web-app>
